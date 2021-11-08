@@ -5,13 +5,14 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "start":"node server.js",
+    "start": "node server.js",
     "postinstall": "if test \"$NODE_ENV\" = \"production\" ; then npm run build ; fi ",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "express": "^4.17.1",
+    "express-favicon": "^2.0.1",
     "vue": "^2.6.11"
   },
   "devDependencies": {
