@@ -1,11 +1,6 @@
 <template> 
 <div> 
-
-    {{news}}
-
-    <!-- <pre>
-        {{JSON.stringfy(data, null,2)}}
-    </pre> -->
+  
 
 </div> 
 </template> 
@@ -19,10 +14,16 @@ export default {
 name: 'NewsList', 
 
 data(){
-    return {
-        news: data,
-    }
+    return{}
+    
+},
+
+created(){
+    console.log(data)
 }
+
+
+
 }; 
 </script> 
 
