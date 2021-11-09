@@ -1,19 +1,28 @@
 <template> 
 <div> 
 
-    <pre>
+    {{news}}
+
+    <!-- <pre>
         {{JSON.stringfy(data, null,2)}}
-    </pre>
+    </pre> -->
 
 </div> 
 </template> 
  
  
 <script> 
-import data from '@/src/assets/data/news.json'
+import data from '@/assets/data/news.json';
+
 
 export default { 
-name: 'news-list', 
+name: 'NewsList', 
+
+data(){
+    return {
+        news: data,
+    }
+}
 }; 
 </script> 
 
