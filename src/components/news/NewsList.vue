@@ -1,6 +1,10 @@
 <template> 
 <div> 
 
+    <pre>
+        {{JSON.stringfy(data, null,2)}}
+    </pre>
+
 </div> 
 </template> 
  
