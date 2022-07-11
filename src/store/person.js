@@ -1,21 +1,34 @@
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
+
 const getters = {
-  moverName() {
-    return `${this.mover.firsName} ${this.mover.lastName}`;
-  },
+  moverName: ({ mover }) =>
+    `${mover.get("firstName") ?? ""}, ${mover.get("middleName") ?? ""}, ${
+      mover.get("lastName") ?? ""
+    }`,
+  moverEmail: ({ mover }) => mover.get("email"),
+  moverPhone: ({ mover }) =>
+    `${mover.get("homePhone") ?? ""}, ${mover.get("mobilePhone") ?? ""}`,
+  preparerName: ({ preparer }) =>
+    `${preparer.get("firstName") ?? ""}, ${preparer.get("middleName") ?? ""}, ${
+      preparer.get("lastName") ?? ""
+    }`,
+  preparerEmail: ({ preparer }) => preparer.get("email"),
+  preparerPhone: ({ preparer }) =>
+    `${preparer.get("homePhone") ?? ""}, ${preparer.get("mobilePhone") ?? ""}`,
 };
 const actions = {
   /**
    * Determines if mover type is business, set null value to selected prameters
    * @returns {void} no return value for this method.
    */
-  async normalizePerson() {
-      ['firstName',
-        'middleName',
-        'lastName',
-        'suffix',
-      ].forEach((value) => this.mover.set(value, null));
+  async normalizePerson({ moverType }) {
+    if (moverType === "BUSINESS") {
+      ["firstName", "middleName", "lastName", "suffix"].forEach((value) =>
+        this.mover.set(value, null)
+      );
+    }
   },
+
   /**
    * This method calls the update functions for mover and preparer
    * @async
@@ -35,7 +48,7 @@ const actions = {
    */
   async updateMover(mover) {
     if (mover) {
-      mover.forEach((value, key) => this.mover.set(key, value));
+      Object.entries(mover).forEach((value, key) => this.mover.set(key, value));
     }
   },
   /**
@@ -46,18 +59,22 @@ const actions = {
    */
   async updatePreparer(preparer) {
     if (preparer) {
-      preparer.forEach((value, key) => this.preparer.set(key, value));
+      Object.entries(preparer).forEach((value, key) =>
+        this.preparer.set(key, value)
+      );
     }
   },
+
   /**
    * Saves Preparer object properties if it has value
    * @async
    * @returns {Promise<object>} checks if preparer has value return saved preparer object else null.
    */
   async savePreparer() {
-    Object.fromEntries(this.preparer.entries())
+    return Object.fromEntries(this.preparer.entries());
   },
 };
+
 /**
  * @namespace
  * @function state (handles holds initial store state.)
@@ -69,16 +86,18 @@ const state = () => ({
   mover: new Map(),
   preparer: new Map(),
 });
+
 /**
  * @type {store<StoreGeneric>} piñia store.
  */
-export default defineStore('person', {
+export default defineStore("person", {
   getters,
   actions,
   state,
 });
+
 export {
   actions as personActions,
   getters as personGetters,
   state as personState,
-}
+};

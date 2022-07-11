@@ -23,13 +23,13 @@ module.exports = {
   // collectCoverageFrom: undefined,
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: 'coverage',
+  coverageDirectory: "coverage",
 
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
-    '/node_modules/',
-    'utils/validators/index.js',
-    'utils/http.nocoverage.js',
+    "/node_modules/",
+    "utils/validators/index.js",
+    "utils/http.nocoverage.js",
   ],
 
   // Indicates which provider should be used to instrument code for coverage
@@ -65,7 +65,7 @@ module.exports = {
   // globals: {},
 
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
-  maxWorkers: '100%',
+  maxWorkers: "100%",
 
   // An array of directory names to be searched recursively up from the requiring module's location
   // moduleDirectories: [
@@ -73,15 +73,7 @@ module.exports = {
   // ],
 
   // An array of file extensions your modules use
-  moduleFileExtensions: [
-    "js",
-    "jsx",
-    "ts",
-    "tsx",
-    "json",
-    "vue",
-    "node"
-  ],
+  moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "vue", "node"],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   // moduleNameMapper: {},
@@ -96,7 +88,7 @@ module.exports = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  preset: '@vue/cli-plugin-unit-jest',
+  preset: "@vue/cli-plugin-unit-jest",
 
   // Run tests from one or more projects
   // projects: undefined,
@@ -140,7 +132,7 @@ module.exports = {
   // snapshotSerializers: [ "<rootDir>/node_modules/jest-serializer-vue"],
 
   // The test environment that will be used for testing
-  testEnvironment: 'node',
+  testEnvironment: "node",
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -177,7 +169,7 @@ module.exports = {
   // A map from regular expressions to paths to transformers
   transform: {
     "^.+\\.vue$": "vue-jest",
-    "^.+\\js$": "babel-jest"
+    "^.+\\js$": "babel-jest",
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation

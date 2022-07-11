@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #dedfe5;
+      }
+      .card-basic-layout {
+        border: 3px solid #fff;
+        max-width: 250px;
+        height: auto;
+        display: grid;
+      }
+      .card-num-1 {
+        color: #594d42;
+        padding: 10px;
+        background-color: #eeece1;
+        grid-template-areas:
+          "braggingText braggingText braggingText ."
+          ". largerText largerText largerText"
+          "imageLeft imageLeft imageRight imageRight";
+      }
+      .card-num-2 {
+        height: 350px;
+        grid-template-areas: "leftBackground rightBackground";
+      }
+      .card-right-background {
+        grid-area: rightBackground;
+        font-size: 32px;
+        padding: 20px 0;
+        background-color: #f4917e;
+        text-align: center;
+      }
+      .cards-layout {
+        display: flex;
+        flex-direction: row;
+        grid-area: cardLayout;
+      }
+      .card-larger-text {
+        grid-area: largerText;
+        font-weight: bold;
+        margin: 0;
+        text-align: right;
+        font-size: 22px;
+      }
+      .card-bragging-text {
+        grid-area: braggingText;
+        font-size: 14px;
+        object-fit: contain;
+        margin: 0;
+      }
+      .card-image {
+        width: 120px;
+        height: 200px;
+      }
+      .card-image-left {
+        grid-area: imageLeft;
+      }
+      .card-image-right {
+        grid-area: imageRight;
+      }
+      .card-left-background {
+        background-color: #b14022;
+        grid-area: leftBackground;
+        width: 20px;
+      }
+      .grid-container-main-content {
+        border-top: 2px solid #d1d3d9;
+        display: grid;
+        padding: 10px;
+        grid-gap: 10px;
+        grid-template-areas:
+          "mainHeader mainHeader  mainSubHeader  mainSubHeader"
+          "mainHeader mainHeader signup signup"
+          "avatar avatar additionalInformation additionalInformation"
+          "avatar avatar . ."
+          "avatar avatar cardLayout cardLayout";
+      }
+      .avatar {
+        grid-area: avatar;
+        max-width: 300px;
+      }
+      .additional-information {
+        grid-area: additionalInformation;
+        padding: 10px 0;
+        max-width: 300px;
+        font-weight: bold;
+        justify-self: center;
+      }
+      .additional-information > button {
+        background-color: #bbc0ce;
+        font-weight: bold;
+        padding: 20px;
+      }
+      .additional-information > div {
+        padding: 10px 0;
+      }
+      .avatar > img {
+        width: 400px;
+        height: 500px;
+      }
+      .grid-container-main {
+        display: grid;
+        grid-template-areas:
+          "menu header header header header header"
+          "menu main main main main main"
+          "menu main main main main main";
+        padding: 10px;
+      }
+      .header {
+        grid-area: header;
+        display: flex;
+        padding: 0 20px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .menu {
+        grid-area: menu;
+        display: flex;
+        height: 100%;
+        font-size: 32px;
+        border-right: 8px solid #d1d3d9;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+      }
+      .main {
+        grid-area: main;
+      }
+      .main > div.grid-container-main-content > h1.main-header {
+        max-width: 300px;
+        grid-area: mainHeader;
+        font-weight: 400;
+      }
+      .main > div.grid-container-main-content > p.main-sub-header {
+        grid-area: mainSubHeader;
+        justify-self: center;
+        max-width: 300px;
+      }
+      .project-sign-up {
+        grid-area: signup;
+        display: flex;
+        justify-self: center;
+        flex-direction: column;
+      }
+      .project-sign-up > label {
+        font-weight: bold;
+        padding: 10px 0;
+      }
+      .project-sign-up > span.user-email-input {
+        background-color: #fff;
+        display: flex;
+        flex-direction: row;
+        padding: 10px 2px;
+        max-width: 300px;
+        justify-content: space-between;
+      }
+      div.project-sign-up > span.user-email-input > input {
+        padding: 10px;
+        border: none;
+      }
+
+      div.project-sign-up > span.user-email-input > button {
+        color: #fff;
+        background-color: #000;
+      }
+      nav.navigation-menu > ul.navigation-menu-links {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      li {
+        float: left;
+        padding: 5px 0;
+      }
+
+      li a {
+        display: block;
+        text-align: center;
+        padding: 0 16px;
+        text-decoration: none;
+      }
+      nav.navigation-menu > ul.navigation-menu-links > li > a:link {
+        color: #000;
+      }
+      nav.navigation-menu
+        > ul.navigation-menu-links
+        > li
+        > a[data-active="true"] {
+        background-color: #04aa6d;
+      }
+      nav.navigation-menu > ul.navigation-menu-links > li:last-child {
+        border: 1px solid #9b9ca9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container-main">
+      <div class="header">
+        <header><h3>Cardi Studios</h3></header>
+        <nav data-isopen="false" class="navigation-menu">
+          <ul class="navigation-menu-links">
+            <li><a data-active="true" href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#insights">Insights</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="menu">
+        <div>📶</div>
+        <div>🥂</div>
+        <div>⬇️</div>
+      </div>
+      <div class="main">
+        <div class="grid-container-main-content">
+          <h1 class="main-header">
+            Award winning digital designer based in RedVentures
+          </h1>
+          <p class="main-sub-header">
+            Cardi Studios is a digital design and development studio. We create
+            unconventional websites and apps with cool custom graphics, photos,
+            videos and animations.
+          </p>
+          <div class="project-sign-up">
+            <label>Let's get start with us</label>
+            <span class="user-email-input">
+              <input type="search" placeholder="Enter your email" />
+              <button>Start a Project</button>
+            </span>
+          </div>
+          <div class="avatar">
+            <img
+              loading="lazy"
+              alt="James Web Telescope Preview"
+              src="https://www.nasa.gov/sites/default/files/thumbnails/image/52196657049_03ed807621_o.jpeg"
+            />
+            <small>
+              <figcaption>
+                <cite>
+                  (2021). Countdown to the Webb Telescope's First Images
+                  [Photograph]. NASA. Retrieved from
+                  <a
+                    href="https://www.nasa.gov/image-feature/countdown-to-the-webb-telescopes-first-images"
+                    >nasa.gov</a
+                  >
+                </cite>
+              </figcaption>
+            </small>
+          </div>
+          <div class="additional-information">
+            <div>
+              Helping founders optimize their product through good design
+            </div>
+            <button>Explore all projects &rarr;</button>
+          </div>
+          <div class="cards-layout">
+            <div class="card-basic-layout card-num-1">
+              <p class="card-bragging-text">
+                We create unconventional websites and apps with cool custom
+                graphics.
+              </p>
+              <p class="card-larger-text">Branding like a professional</p>
+              <img
+                class="card-image card-image-left"
+                loading="lazy"
+                src="https://cdn.ampersend.io/20VeDQSpJWASAZYzGAPTlUM3dhH.jpg"
+              />
+              <img
+                class="card-image card-image-right"
+                loading="lazy"
+                src="https://cdn.ampersend.io/20VeDHdOfdAazSaSkSammnAe48U.jpg"
+              />
+            </div>
+            <div class="card-basic-layout card-num-2">
+              <div class="card-left-background"></div>
+              <div class="card-right-background">
+                Some text here. kind of don't want to make this look pretty. but
+                here it is.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

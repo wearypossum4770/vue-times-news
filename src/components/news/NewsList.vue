@@ -1,37 +1,29 @@
-<template> 
-<div > 
-  <div id="pointer">Breaking News</div>
-<div>{{ news.title }}</div>
-</div> 
-</template> 
- 
- 
-<script> 
-import data from '@/assets/data/news.json';
+<template>
+  <div>
+    <div id="pointer">Breaking News</div>
+    <div>{{ news.title }}</div>
+  </div>
+</template>
 
+<script>
+import data from "@/assets/data/news.json";
 
-export default { 
-name: 'NewsList', 
+export default {
+  name: "NewsList",
 
-data(){
-    return{
-        news: data[0],
-    }
-    
-},
+  data() {
+    return {
+      news: data[0],
+    };
+  },
 
-created(){
-    console.log(data)
-}
+  created() {
+    console.log(data);
+  },
+};
+</script>
 
-
-
-}; 
-</script> 
-
-
-<style scoped> 
-
+<style scoped>
 #pointer {
   width: 200px;
   height: 40px;
@@ -65,4 +57,4 @@ created(){
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
 }
-</style> 
+</style>
