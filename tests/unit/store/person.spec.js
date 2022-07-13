@@ -11,7 +11,7 @@ test("normalize person", async () => {
       ["suffix", "Jr."],
     ]),
   };
-  await person.normalizePerson({moverType: 'BUSINESS'});
+  await person.normalizePerson({ moverType: "BUSINESS" });
   expect(person.mover.get("firstName")).toBe(null);
   expect(person.mover.get("middleName")).toBe(null);
   expect(person.mover.get("lastName")).toBe(null);
@@ -41,7 +41,7 @@ test.each([
       ["lastName", "Doe"],
     ],
     "John, Doe",
-  ]
+  ],
 ])("given a mover %o moverName should be %s", async (state, output) => {
   const mover = new Map(state);
   const person = {
