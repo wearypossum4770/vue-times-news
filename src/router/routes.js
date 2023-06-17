@@ -1,25 +1,22 @@
-
+import HomePage from '@/views/home-view.vue'
+/**
+ * @typedef VueRouter
+ *
+ */
 export default [
   {
-    // Unique ID
-    id: 'vue-webpack-dashboard-client-addon',
-    // Button label
-    label: 'Dashboard',
-    // Button icon
-    icon: 'dashboard',
-    // Dynamic component to load (see 'Client addon' section below)
-    component: 'vue-webpack-dashboard'
+    path: '/',
+    name: 'home-page',
+    component: HomePage
   },
-   {
-    path:'/news',
+  {
+    path: '/news',
     name: 'news-home',
-    meta: {pageName: "", needsFetch: true,},
-    component: () => import("@/views/news/home.vue"),
-   },
-   {
+    component: () => import('@/views/news/home.vue')
+  },
+  {
     path: '/news/:id',
     name: 'article-detail',
-    meta: {pageName: "", needsFetch: true,},
-    component: () => import("@/views/news/article-details.vue"),
-  },
+    component: () => import('@/views/news/article-details.vue')
+  }
 ]

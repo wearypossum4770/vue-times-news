@@ -1,0 +1,50 @@
+/* https://hookagency.com/blog/website-color-schemes-2020/ */
+:root {
+  /* 1. Minimal Colors, Soft Beach by Duminda Perera */
+  --bright-blue: #51e2f5;
+  --blue-green: #9df9ef;
+  --dusty-white: #edf756;
+  --pink-sand: #ffa8b6;
+  --dark-sand: #a28089;
+  /*  Minimal Colors – Purple 90’s Color Scheme by Duminda Perera*/
+  --ice-cold: #a0d2eb;
+  --freeze_purple: #e5eaf5;
+  --medium-purple: #d0bdf4;
+  --purple-pain: #8458b3;
+  --heavy-purple: #a28089;
+  --nightshade-purple: #494d5f;
+  /*  Bright Power by Duminda Perera */
+  --yass-queen: #ff1d58;
+  --sister-sister: #f75990;
+  --crown-yellow: #fff685;
+  --blue-light: #00ddff;
+  --brutal-nlue: #0049b7;
+  /* Rethink. Color Scheme by Sajon */
+  --brightly-0range: #ff1e00;
+  --dimly-blue: #e8f9fd;
+  --alert-green: #59ce8f;
+  /* Global Charity Website Color Schemes by Cuberto */
+  --brightly-orange-number2: #f43a09;
+  --grandpa-orange: #ffb766;
+  --grey-blue-green: #c2edda;
+  --live-green: #68d388;
+  /* Banking and Finance Website Color Schemes by Juliene Renvoy */
+  --pinky: #fbe3e8;
+  --blue-greeny: #5cbdb9;
+  --teeny-greeny: #ebf6f5;
+  /* Intense green, blue, and red color scheme */
+  --bright-green: #beef00;
+  --electric-red: #ff0028;
+  --deep-green: #657a00;
+  --power-blue: #1400c6;
+  /* White space, tan, purple, yellow color website scheme */
+  --background-tan: #fceed1;
+  --purple-y: #7d3cff;
+  --yellow-gloves: #f2d53c;
+  --redhead: #c80e13;
+  /* Deep blue and tan – color palette */
+  --sand-tan: #e1b382;
+  --sand-tan-shadow: #c89666;
+  --night-blue: #2d545e;
+  --night-blue-shadow: #12343b;
+}
