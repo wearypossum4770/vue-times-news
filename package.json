@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:262fdf9b81b1842c328dbb9998614f956d713459f9a891d9f1d15a24138d4e04
-size 1404
+{
+  "name": "src",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^2.8.7",
+    "yup": "^1.0.2"
+  }
+}

@@ -1,5 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+  <script>
+    window.dataLayer = window.dataLayer || [["js", Date.now()]];
+    window.gtag = (...args) => dataLayer.push(args);
+    window.date = () => Date.now();
+ga('set', 'transport', 'beacon');
+    gtag("config", "TAG_ID", { accept_incoming: true, "allow_enhanced_conversions": true });
+    gtag("config", "GT-XXXXXX");
+    gtag("config", "DC-ZZZZZZ");	
+    gtag("set", { country: "US", currency: "USD" });
+    gtag("config", "G-XXXXXX-1", { groups: "group1" });
+    gtag("config", "G-XXXXXX-2", { groups: "group1" });
+    gtag("event", "sign_in", { send_to: "group1" });
+    gtag("event", "sign_in", { send_to: "G-XXXXXX-2" });
+// Defines the plugin constructor.
+function MyPlugin() {
+  console.log('myplugin has been required...');
+}
+
+// Registers the plugin for use.
+ga('provide', 'myplugin', MyPlugin);
+
+    const newsletterSignup = () =>
+      gtag("event", "conversion", {
+        send_to: "AW-YYYYYY/AbC-D_efG-h12_34-567",
+        value: 1.0,
+        currency: "USD",
+      });
+
+    // Measure Floodlight conversions
+    gtag("event", "conversion", {
+      allow_custom_scripts: true,
+      send_to: "DC-ZZZZZZ/actions/locat304+standard",
+    });
+
+    // Route ecommerce add_to_cart event to Google Ads and Analytics
+    gtag("event", "add_to_cart", {
+      send_to: ["G-XXXXXX-1", "AW-YYYYYY"],
+      items: [
+        ("id": "U1234"),
+        ("ecomm_prodid": "U1234"),
+        ("name": "Argyle Funky Winklepickers"),
+        ("list": "Search Results"),
+        ("category": "Footwear"),
+        ("quantity": 1),
+        ("ecomm_totalvalue": 123.45),
+        ("price": 123.45),
+      ],
+    });
+    // Configure a target
+    gtag("config", "G-XXXXXX-1");
+    gtag("config", "G-XXXXXX-3", { groups: "agency" });
+    gtag("config", "G-XXXXXX-9", { groups: "agency" });
+
+    // Routes only to 'G-XXXXXX-3' and 'G-XXXXXX-9' since they
+    // are both in the 'agency' group
+    gtag("event", "sign_in", { send_to: "agency" }); // Configure a target
+    gtag("config", "G-XXXXXX-1");
+
+    // Since send_to is not specified, this routes to the 'default' group which
+    // includes 'G-XXXXXX-1', as defined in config, above.
+    gtag("event", "sign_in");
+
+    // By default, routes to the 'default' groups which includes
+    // 'G-XXXXXX-1', as defined in config, above.
+    gtag("event", "generate_lead", { send_to: "default" });
+    gtag("event", "newsletter_signup", { time: date() });
+ga('create', 'UA-XXXXX-Y', 'auto', {allowLinker: true});
+ga('send', 'pageview');
+ga('require', 'linker');
+ga('linker:autoLink', ['source.com', 'destination.com']);
+
+  </script>
   <head>
     <link async defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
