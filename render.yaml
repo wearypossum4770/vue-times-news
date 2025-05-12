@@ -1,7 +1,7 @@
 services:
 - type: web
   name: nuxt-js
-  env: node
+  env: bun
   plan: starter
-  buildCommand: yarn; yarn build
-  startCommand: yarn start
+  buildCommand: bun --bun install; bun --bun  build
+  startCommand: bun --bun start
